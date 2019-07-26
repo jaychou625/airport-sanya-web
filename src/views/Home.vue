@@ -1,17 +1,35 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <Header />
+    <div class="content">
+      <LeftNav class="leftNav" />
+    </div>
   </div>
 </template>
 
+<style lang="stylus">
+  .home
+    width 1440px
+    margin 0 auto
+  .content:after
+    content:'';
+    display block;
+    clear:both;
+  .leftNav
+    float left
+</style>
+
+
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import Header from '@/components/public/header/header.vue'; // @ is an alias to /src
+import LeftNav from '@/components/public/navigate/leftNav.vue'; // @ is an alias to /src
+
 
 @Component({
   components: {
-    HelloWorld,
+    Header,
+    LeftNav,
   },
 })
 export default class Home extends Vue {}
